@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Body Farm</string>
+
+
+    <string name="facebook_app_id">1780866312215173</string>
+    <string name="fb_login_protocol_scheme">fb1780866312215173</string>
+</resources>

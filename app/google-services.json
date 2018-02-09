@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "112004584526",
+    "firebase_url": "https://body-farm.firebaseio.com",
+    "project_id": "body-farm",
+    "storage_bucket": "body-farm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112004584526:android:c7f35d5876141a79",
+        "android_client_info": {
+          "package_name": "aman.backender.com.bodyfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112004584526-kstpjne7k295f3addn2h0n35ldkc84k0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aman.backender.com.bodyfarm",
+            "certificate_hash": "4a1cf3c5463a5a6b579c1845295cecd64576c05b"
+          }
+        },
+        {
+          "client_id": "112004584526-bb3bh2r0ijnjbd898dp3or8e56mh7sir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAThtoEmp1Itz2CQRQyJmL4RYgcBmX3gA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112004584526-bb3bh2r0ijnjbd898dp3or8e56mh7sir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

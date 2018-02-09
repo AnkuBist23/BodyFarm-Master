@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">Sc Technologies</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="app_main_line">Welcome to Sc Technologies Pvt Ltd </string>
+    <string name="app_type">B2B Login</string>
+
+    <string name="str_nav_home">Home</string>
+    <string name="str_nav_flight">Flight</string>
+    <string name="str_nav_bus">Buses</string>
+    <string name="str_nav_hotel">Hotel</string>
+    <string name="str_man_mark">My Account</string>
+    <string name="str_nav_holiday">Holidays</string>
+    <string name="str_nav_about_us">Contact Us</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="spinner_title">Select Category</string>
+    <string name="email">info@travelportalsolution.com</string>
+    <string name="address">SC Tech Noida Sector 2 , Near Narula, Near Sector 15 metro station</string>
+    <string name="user_name">Sc Technology</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="flight">Flight</string>
+    <string name="hotel">Hotel</string>
+    <string name="holiday">Holiday</string>
+    <string name="bus">Buses</string>
+    <string name="About_Us_Details">The travel world is very well aware with the name Travel Portal Solution. It is the one stop destination for the travel needs of the travel portals that is the industry pioneer. Providing one stop search solution to the travel portals regarding their entire technical requirement is what the company does and has been doing from the past many years. TPS is not just a name it is the brand of excellence and quality. With the technology enabled software solution system, the company provides the best assistance to the national and international clients. Everything with regarding to the business of a travel portal, whether its business related suggestion, technical requirement or increasing the visibility of the business in the search engine through SEO, the company provides complete solution to all.
+Having served more than thousands of national and international clients, the company has already written the history of succession and the number is still counting. The company is the vision of Mr. Raj Yadav, who is the director of Travel Portal Solution. With his whole sole aim of providing the best software solution in the travel domain Mr. Raj is putting the best of his endeavors to bring the business at its high from the past many years. Premium travel software solution such as Galileo GDS API Integration, Saber GDS API Integration, Amadeus GDS API Integration, are available exclusively at Travel Portal Solution.
+The company is also well known as working for the need of travel portals with low budget with its exclusive travel portal solution white label solution. There is no other name in the industry that can beat TPS white label software solution and that too at the cost TPS is offering, not at all possible. All the staffs of the company are proficient in their work and are efficient of doing technology driven work. The mission and mission of the company is the satisfaction of its clients and for this it is progressive night and day.
+New technologies and new software solutions every possible time is what favors the business of TPS. It always favors the need of its clients through the latest software solutions that is not possible with the other competitors of TPS. Complete website developments, website promotion, SEO, website coding and designing are the exclusive services of TPS which are the part of its package of travel portal development. Come and let the leaders of the industry work for you, so that your business may get a global recognition.
+Happy to hear from your side! We are twenty four by seven available for you.
+Heartfelt Wishes
+Team Travel Portal Solution</string>
+
+    <string name="text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel </string>
+
+
+    <string name="title_activity_payment_success">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hostname">EBS</string>
+
+    <string name="paymnet_success">Thanks for your shopping!</string>
+    <string name="paymnet_product_id">Your Product id is:</string>
+
+    <string name="payment_failure_message">The order has been cancelled</string>
+
+    <string name="order_id">Order Id : </string>
+    <string name="customer_id">Customer Id : </string>
+    <string name="transaction_amount">Transaction Amount : </string>
+    <string name="channel_id">Channel Id : </string>
+    <string name="industry_type_id">Industry Type Id : </string>
+    <string name="website">Website : </string>
+    <string name="theme">Theme : </string>
+    <string name="cust_email_id">Email Id : </string>
+    <string name="cust_mobile_no">Mobile Number : </string>
+    <string name="merchant_id">Merchant Id : </string>
+    <string name="checksum_generation_url">Checksum Generation URL : </string>
+    <string name="checksum_verification_url">Checksum Verification URL : </string>
+    <string name="start_transaction">Start Transaction</string>
+    <string name="start_transaction_ebs">Start Transaction With EBS</string>
+    <string name="sample_order_id">ORDER</string>
+    <string name="sample_customer_id">CUST23657</string>
+    <string name="sample_transaction_amount">1</string>
+    <string name="sample_channel_id">WAP</string>
+    <string name="sample_industry_type_id">Retail</string>
+    <string name="sample_website">worldpressplg</string>
+    <string name="sample_theme">merchant</string>
+    <string name="sample_cust_email_id">abc@gmail.com</string>
+    <string name="sample_cust_mobile_no">123</string>
+    <string name="sample_merchant_id_staging">WorldP64425807474247</string>
+    <string name="sample_checksum_generation_url">https://pguat.paytm.com/merchant-chksum/ChecksumGenerator</string>
+    <string name="sample_checksum_verification_url">https://pguat.paytm.com/merchant-chksum/ValidateChksum</string>
+    <string name="title_activity_check_sum">Sign in</string>
+    <string name="ticket_type">This Is Electronic Ticket</string>
+
+    <string name="app_id">108818189771523</string>
+
+    <string-array name="Title">
+
+        <item>Mr</item>
+        <item>Mrs</item>
+        <item>Ms</item>
+
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_map">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="booking">Booking Deatils</string>
+    <string name="flight_search">Flight Search</string>
+    <string name="fare_rule">Fare Rule</string>
+
+
+    <string name="fliter">Fliters</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="defaultAmountValue">2.50</string>
+    <string name="amountText">Amount</string>
+    <string name="modeText">Mode</string>
+    <string name="liveRadioText">LIVE</string>
+    <string name="testRadioText">TEST</string>
+    <string name="payButtonText">Pay Using TraknPay</string>
+    <string name="backButtonText">Make another Payment</string>
+
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="finish">Submit order</string>
+    <string name="review">Review</string>
+
+    <string name="label_your_name">Name</string>
+    <string name="label_your_email">Email</string>
+    <string name="hint_your_name">e.g. Larry</string>
+    <string name="hint_your_email">Optional</string>
+
+    <string name="submit_confirm_message">Place the order with the deli? You will receive an email
+        confirmation.</string>
+    <string name="submit_confirm_button">Place order</string>
+
+    <string name="type_normal">Normal</string>
+    <string name="type_coupon">Coupon</string>
+
+    <string name="type_fixed">Fixed</string>
+    <string name="type_percentage">Percentage</string>
+    <string name="title_activity_flight__add__markup">Flight_Add_Markup</string>
+
+
+</resources>
