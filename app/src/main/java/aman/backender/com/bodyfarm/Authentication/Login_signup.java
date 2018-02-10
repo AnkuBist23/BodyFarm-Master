@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -55,86 +54,73 @@ import aman.backender.com.bodyfarm.R;
 import aman.backender.com.bodyfarm.Utils.Constant;
 import aman.backender.com.bodyfarm.activity.Home;
 import aman.backender.com.bodyfarm.retrofit.RetrofitResponse;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static aman.backender.com.bodyfarm.activity.Splash.mPrefs;
 
-public class Login_signup extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
-    Button gmail_signin, facebook_signin;
-    EditText password, login_id;
+public class Login_signup extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+
+    @BindView(R.id.inputLoginId)
+    EditText inputLoginId;
+    @BindView(R.id.inputPassword)
+    EditText inputPassword;
+
     private static final int REQ_CODE = 9001;
     private GoogleApiClient googleApiClient;
-    CallbackManager callbackManager;
-    String TAG = "", email, firstName, lastName, gender, name, country, picPath, id, dob;
-    com.facebook.login.LoginManager fbLoginManager;
+    private CallbackManager callbackManager;
+    private String TAG = "", email, firstName, lastName, gender, name, country, picPath, id, dob;
+    private LoginManager fbLoginManager;
     public static int mode;
-    JSONObject response_userInfo;
+    private JSONObject response_userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        init();
-        facebookLogin();
-        gmail_signin = (Button) findViewById(R.id.gmail_signin);
-        facebook_signin = (Button) findViewById(R.id.facebook_signin);
-        password = (EditText) findViewById(R.id.password);
-        login_id = (EditText) findViewById(R.id.login_id);
 
         ButterKnife.bind(this);
+        initGLogin();
+        initFbLogin();
     }
 
-    @OnClick(R.id.sign_up)
-    public void sign_up(View v) {
+    @OnClick(R.id.btnSignUp)
+    public void signUp(View v) {
         mode = 0;
         Intent i = new Intent(Login_signup.this, Register_gym.class);
         startActivity(i);
     }
 
-    @OnClick(R.id.login)
+    @OnClick(R.id.btnLogin)
     public void login(View v) {
-        if (login_id.getText().toString().trim().length() <= 0) {
-            login_id.setError("Please Enter the User id");
+        if (inputLoginId.getText().toString().trim().length() <= 0) {
+            inputLoginId.setError("Please Enter the User id");
             return;
-        } else if (password.getText().toString().trim().length() <= 0) {
-            password.setError("Please Enter the Password");
+        } else if (inputPassword.getText().toString().trim().length() <= 0) {
+            inputPassword.setError("Please Enter the Password");
             return;
         } else {
             mode = 0;
-            normal_signin(login_id.getText().toString(), password.getText().toString());
-
+            normal_signin(inputLoginId.getText().toString(), inputPassword.getText().toString());
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.gmail_signin:
-                //type = GMAIL....if user doesnot not exists you will return user to signup page. You know this.
-                //but you have to pass the returned value from gmail using user gmail account access like email, user name, first name
-                //sign up page will autofill these fields and u will let the user to edit these fields.
-                // ur turn
-                signin();
-                break;
-        }
-
+    @OnClick(R.id.imgFbSignIn)
+    public void fbSignIn(View v) {
+        fbLoginManager.logInWithReadPermissions(Login_signup.this, Arrays.asList("email", "public_profile", "user_birthday"));
     }
 
-    private void signin() {
+    @OnClick(R.id.imgGSignIn)
+    public void gSignIn(View v) {
         Intent i = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(i, REQ_CODE);
-
     }
 
     @SuppressLint("WrongViewCast")
-    public void init() {
-        gmail_signin = findViewById(R.id.gmail_signin);
-        gmail_signin.setOnClickListener(this);
-
+    public void initGLogin() {
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions).build();
-
     }
 
     private void handleResult(GoogleSignInResult result) {
@@ -199,19 +185,11 @@ public class Login_signup extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void facebookLogin() {
+    public void initFbLogin() {
         FacebookSdk.sdkInitialize(getApplicationContext());
-
         fbLoginManager = com.facebook.login.LoginManager.getInstance();
         callbackManager = CallbackManager.Factory.create();
-        facebook_signin = findViewById(R.id.facebook_signin);
-        facebook_signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fbLoginManager.logInWithReadPermissions(Login_signup.this, Arrays.asList("email", "public_profile", "user_birthday"));
 
-            }
-        });
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
             @Override
@@ -257,8 +235,6 @@ public class Login_signup extends AppCompatActivity implements View.OnClickListe
                 Log.e(TAG, "onError: ");
             }
         });
-
-
     }
 
     public void normal_signin(final String loginId, final String password) {
@@ -319,7 +295,6 @@ public class Login_signup extends AppCompatActivity implements View.OnClickListe
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-               // params.put("LoginId", loginId);   // nashe mein ho ka?? pata ni kese ho gaya ye change
                 params.put("loginId", loginId);
                 params.put("password", password);
                 return params;
