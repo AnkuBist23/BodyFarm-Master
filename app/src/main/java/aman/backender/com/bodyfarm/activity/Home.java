@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -23,14 +25,19 @@ import java.util.Map;
 
 import aman.backender.com.bodyfarm.R;
 import aman.backender.com.bodyfarm.Utils.Constant;
+import aman.backender.com.bodyfarm.adapter.adapter_client_data;
 import aman.backender.com.bodyfarm.retrofit.RetrofitResponse;
 
 public class Home extends AppCompatActivity {
     String loginId;
     String EmailId;
     String PhotoUrl;
-   // String recId;
+    // String recId;
     private int recId;
+
+    static RecyclerView.Adapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +45,13 @@ public class Home extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         recId = bundle.getInt("userInfo");
         Log.d(ContentValues.TAG, "Request_Data" + recId);
-        Register_Me(recId);
+        UserClientData(recId);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(mLayoutManager);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +62,7 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    public void Register_Me(final int str) {
+    public void UserClientData(final int str) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constant.BASE_URL + Constant.User_Data,
@@ -59,8 +71,12 @@ public class Home extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d(ContentValues.TAG, "Response_Data" + response);
                         RetrofitResponse retroResult = new Gson().fromJson(response, RetrofitResponse.class);
-                       // String arrSize = String.valueOf(retroResult.getArrUsers().size());
-                       // Toast.makeText(Home.this, arrSize, Toast.LENGTH_SHORT).show();
+
+                        mAdapter = new adapter_client_data(retroResult.getArrUsers(),Home.this);
+                        mRecyclerView.setAdapter(mAdapter);
+
+                        String arrSize = String.valueOf(retroResult.getArrUsers().size());
+                        Toast.makeText(Home.this, arrSize, Toast.LENGTH_SHORT).show();
                     }
                 }, new Response.ErrorListener() {
             @Override
